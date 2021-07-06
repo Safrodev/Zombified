@@ -6,4 +6,4 @@ https://www.curseforge.com/minecraft/mc-mods/zombified
 
 
 
-Sulfur Dust texture belongs to the mod TechReborn. Their license allows for use of the texture.
+Sulfur Dust texture was made by TechReborn. Their license allows for use of the texture but I have applied credit anyway.
