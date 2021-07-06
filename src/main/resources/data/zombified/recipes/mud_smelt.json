@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "zombified:mud_clump"
+  },
+  "result": "zombified:sulfur_dust",
+  "experience": 0.15,
+  "cookingtime": 200
+}

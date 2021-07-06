@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "FFF",
+    " S ",
+    " S "
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "F": {
+      "tag": "c:flesh"
+    }
+  },
+  "result": {
+    "item": "zombified:flesh_hammer",
+    "count": 1
+  }
+}

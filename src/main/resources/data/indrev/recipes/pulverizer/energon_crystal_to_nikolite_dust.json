@@ -1,0 +1,12 @@
+
+{
+  "type": "indrev:pulverize",
+  "ingredients": {
+    "item": "zombified:energon_crystal"
+  },
+  "output": {
+    "item": "indrev:nikolite_dust",
+    "count": 5
+  },
+  "processTime": 200
+}

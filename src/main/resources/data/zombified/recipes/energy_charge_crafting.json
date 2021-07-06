@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " E ",
+    "EGE",
+    " E "
+  ],
+  "key": {
+    "E": {
+      "item": "zombified:energon_crystal"
+    },
+    "G": {
+      "item": "minecraft:gunpowder"
+    }
+  },
+  "result": {
+    "item": "zombified:energy_charge",
+    "count": 4
+  }
+}

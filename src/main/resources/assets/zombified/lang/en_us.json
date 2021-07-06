@@ -1,0 +1,23 @@
+{
+  "entity.zombified.arctic_zombie": "Arctic Zombie",
+  "entity.zombified.infernal_zombie": "Infernal Zombie",
+  "entity.zombified.crystal_zombie": "Crystal Zombie",
+  "entity.zombified.miner_zombie": "Miner Zombie",
+  "entity.zombified.beserker_zombie": "Beserker Zombie",
+  "entity.zombified.sludge_zombie": "Sludge Zombie",
+
+  "item.zombified.arctic_spawn_egg": "Arctic Zombie Spawn Egg",
+  "item.zombified.infernal_spawn_egg": "Infernal Zombie Spawn Egg",
+  "item.zombified.crystal_spawn_egg": "Crystal Zombie Spawn Egg",
+  "item.zombified.miner_spawn_egg": "Miner Zombie Spawn Egg",
+  "item.zombified.beserker_spawn_egg": "Beserker Zombie Spawn Egg",
+  "item.zombified.sludge_spawn_egg": "Sludge Zombie Spawn Egg",
+
+  "item.zombified.frozen_flesh": "Frozen Rotten Flesh",
+  "item.zombified.charred_flesh": "Charred Flesh",
+  "item.zombified.flesh_hammer": "Flesh Hammer",
+  "item.zombified.energon_crystal": "Energon Crystal",
+  "item.zombified.energy_charge": "Energy Charge",
+  "item.zombified.mud_clump": "Mud Clump",
+  "item.zombified.sulfur_dust": "Sulfur Dust"
+}

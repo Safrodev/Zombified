@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "zombified:frozen_flesh"
+  },
+  "result": "minecraft:rotten_flesh",
+  "experience": 0.20,
+  "cookingtime": 200
+}

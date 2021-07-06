@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "zombified",
+  "version": "1.0.0",
+
+  "name": "Zombified",
+  "description": "Adds a bunch of new zombies!",
+  "authors": [
+    "Safro"
+  ],
+  "contact": {
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/zombified",
+    "sources": "https://github.com/Safrodev/Zombified/tree/main",
+    "issues": "https://github.com/Safrodev/Zombified/issues"
+  },
+
+  "license": "MIT License",
+  "icon": "assets/zombified/zombified_icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "safro.zombified.Zombified"
+    ],
+    "client": [
+      "safro.zombified.ZombifiedClient"
+    ]
+  },
+  "mixins": [
+    "zombified.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.11.3",
+    "fabric": "*",
+    "minecraft": "1.17.x",
+    "java": ">=16"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}

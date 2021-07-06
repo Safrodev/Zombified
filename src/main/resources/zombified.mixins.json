@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "safro.zombified.mixin",
+  "compatibilityLevel": "JAVA_16",
+  "mixins": [
+    "SpawnRestrictionAccessor"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

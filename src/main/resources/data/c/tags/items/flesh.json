@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "zombified:charred_flesh",
+    "zombified:frozen_flesh",
+    "minecraft:rotten_flesh"
+  ]
+}
