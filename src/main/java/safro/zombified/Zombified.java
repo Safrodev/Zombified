@@ -16,12 +16,14 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.Heightmap;
 import net.minecraft.world.biome.BiomeKeys;
+import safro.zombified.config.Config;
 import safro.zombified.entity.*;
 import safro.zombified.item.EnergyChargeProjectileEntity;
 import safro.zombified.item.ItemRegistry;
 
 public class Zombified implements ModInitializer {
 
+	public static Config config;
 
 	public static final EntityType<ArcticZombieEntity> ARCTIC =
 			Registry.register(Registry.ENTITY_TYPE,
@@ -68,6 +70,7 @@ public class Zombified implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		config = Config.loadOrCreate();
 
 		ItemRegistry.init();
 
@@ -79,13 +82,13 @@ public class Zombified implements ModInitializer {
 		FabricDefaultAttributeRegistry.register(SLUDGE, SludgeZombieEntity.createZombieAttributes());
 		FabricDefaultAttributeRegistry.register(BESERKER, BeserkerZombieEntity.createZombieAttributes().add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.3D).add(EntityAttributes.GENERIC_ATTACK_KNOCKBACK, 0.5D).add(EntityAttributes.GENERIC_MAX_HEALTH, 30.0D));
 
-		BiomeModifications.addSpawn(BiomeSelectors.includeByKey(BiomeKeys.SNOWY_TUNDRA, BiomeKeys.SNOWY_MOUNTAINS, BiomeKeys.SNOWY_TAIGA, BiomeKeys.ICE_SPIKES), SpawnGroup.MONSTER, Zombified.ARCTIC, 15, 1, 3);
-		BiomeModifications.addSpawn(BiomeSelectors.includeByKey(BiomeKeys.NETHER_WASTES, BiomeKeys.CRIMSON_FOREST, BiomeKeys.WARPED_FOREST), SpawnGroup.MONSTER, Zombified.INFERNAL, 20, 2, 4);
-		BiomeModifications.addSpawn(BiomeSelectors.foundInOverworld(), SpawnGroup.MONSTER, Zombified.CRYSTAL, 25, 1, 2);
+		BiomeModifications.addSpawn(BiomeSelectors.includeByKey(BiomeKeys.SNOWY_TUNDRA, BiomeKeys.SNOWY_MOUNTAINS, BiomeKeys.SNOWY_TAIGA, BiomeKeys.ICE_SPIKES), SpawnGroup.MONSTER, Zombified.ARCTIC, Config.ARCTIC_SR, 1, 3);
+		BiomeModifications.addSpawn(BiomeSelectors.includeByKey(BiomeKeys.NETHER_WASTES, BiomeKeys.CRIMSON_FOREST, BiomeKeys.WARPED_FOREST), SpawnGroup.MONSTER, Zombified.INFERNAL, Config.INFERNAL_SR, 2, 4);
+		BiomeModifications.addSpawn(BiomeSelectors.foundInOverworld(), SpawnGroup.MONSTER, Zombified.CRYSTAL, Config.CRYSTAL_SR, 1, 2);
 		// BiomeModifications.addSpawn(BiomeSelectors.includeByKey(BiomeKeys.BADLANDS, BiomeKeys.JUNGLE, BiomeKeys.DARK_FOREST, BiomeKeys.DARK_FOREST_HILLS), SpawnGroup.MONSTER, Zombified.BRUTE, 10, 1, 1);
-		BiomeModifications.addSpawn(BiomeSelectors.foundInOverworld(), SpawnGroup.MONSTER, Zombified.MINER, 5, 1, 1);
-		BiomeModifications.addSpawn(BiomeSelectors.includeByKey(BiomeKeys.SWAMP, BiomeKeys.SWAMP_HILLS, BiomeKeys.JUNGLE), SpawnGroup.MONSTER, Zombified.SLUDGE, 30, 1, 2);
-		BiomeModifications.addSpawn(BiomeSelectors.foundInOverworld(), SpawnGroup.MONSTER, Zombified.BESERKER, 10, 1, 1);
+		BiomeModifications.addSpawn(BiomeSelectors.foundInOverworld(), SpawnGroup.MONSTER, Zombified.MINER, Config.MINER_SR, 1, 1);
+		BiomeModifications.addSpawn(BiomeSelectors.includeByKey(BiomeKeys.SWAMP, BiomeKeys.SWAMP_HILLS, BiomeKeys.JUNGLE), SpawnGroup.MONSTER, Zombified.SLUDGE, Config.MINER_SR, 1, 2);
+		BiomeModifications.addSpawn(BiomeSelectors.foundInOverworld(), SpawnGroup.MONSTER, Zombified.BESERKER, Config.BESERK_SR, 1, 1);
 
 		SpawnRestrictionAccessor.callRegister(CRYSTAL, SpawnRestriction.Location.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, CrystalZombieEntity::canSpawn);
 	}
