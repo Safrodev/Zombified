@@ -24,9 +24,12 @@ import java.util.Random;
 @SuppressWarnings("EntityConstructor")
 public class BruteZombieEntity extends ZombieEntity {
     private int attackTicksLeft;
+    private int lookingAtVillagerTicksLeft;
 
     public BruteZombieEntity(EntityType<? extends BruteZombieEntity> entityType, World world) {
         super(entityType, world);
+        this.stepHeight = 1.0F;
+        this.experiencePoints = 40;
     }
 
     private float getAttackDamage() {
@@ -51,6 +54,8 @@ public class BruteZombieEntity extends ZombieEntity {
     public void handleStatus(byte status) {
         if (status == 4) {
             this.attackTicksLeft = 10;
+        } else if (status == 11) {
+            this.lookingAtVillagerTicksLeft = 400;
         } else {
             super.handleStatus(status);
         }
@@ -61,6 +66,10 @@ public class BruteZombieEntity extends ZombieEntity {
         super.tickMovement();
         if (this.attackTicksLeft > 0) {
             --this.attackTicksLeft;
+        }
+
+        if (this.lookingAtVillagerTicksLeft > 0) {
+            --this.lookingAtVillagerTicksLeft;
         }
 
         if (this.getVelocity().horizontalLengthSquared() > 2.500000277905201E-7D && this.random.nextInt(5) == 0) {
@@ -77,6 +86,10 @@ public class BruteZombieEntity extends ZombieEntity {
 
     public int getAttackTicksLeft() {
         return this.attackTicksLeft;
+    }
+
+    public int getLookingAtVillagerTicks() {
+        return this.lookingAtVillagerTicksLeft;
     }
 
     protected boolean burnsInDaylight() {

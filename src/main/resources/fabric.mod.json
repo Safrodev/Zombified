@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "id": "zombified",
-  "version": "1.0.0",
+  "version": "1.3.0",
 
   "name": "Zombified",
-  "description": "Adds a bunch of new zombies!",
+  "description": "Adds a variety of tough zombies to your world!",
   "authors": [
     "Safro"
   ],
@@ -24,6 +24,9 @@
     ],
     "client": [
       "safro.zombified.ZombifiedClient"
+    ],
+    "modmenu": [
+      "safro.zombified.config.ModMenuIntegration"
     ]
   },
   "mixins": [
@@ -33,10 +36,8 @@
   "depends": {
     "fabricloader": ">=0.11.3",
     "fabric": "*",
-    "minecraft": "1.17.x",
-    "java": ">=16"
-  },
-  "suggests": {
-    "another-mod": "*"
+    "minecraft": "1.18.x",
+    "java": ">=17",
+    "cloth-config2": ">=6.0.42"
   }
 }

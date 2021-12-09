@@ -1,10 +1,23 @@
 {
+  "itemGroup.zombified.zombified": "Zombified",
+
+  "text.autoconfig.zombified.option.arctic_zombie_spawn_weight": "Arctic Zombie Spawn Weight",
+  "text.autoconfig.zombified.option.infernal_zombie_spawn_weight": "Infernal Zombie Spawn Weight",
+  "text.autoconfig.zombified.option.miner_zombie_spawn_weight": "Miner Zombie Spawn Weight",
+  "text.autoconfig.zombified.option.beserk_zombie_spawn_weight": "Beserker Zombie Spawn Weight",
+  "text.autoconfig.zombified.option.crystal_zombie_spawn_weight": "Crystal Zombie Spawn Weight",
+  "text.autoconfig.zombified.option.sludge_zombie_spawn_weight": "Sludge Zombie Spawn Weight",
+  "text.autoconfig.zombified.option.brute_zombie_spawn_weight": "Brute Zombie Spawn Weight",
+  "text.autoconfig.zombified.option.squirm_zombie_spawn_weight": "Squirm Zombie Spawn Weight",
+
   "entity.zombified.arctic_zombie": "Arctic Zombie",
   "entity.zombified.infernal_zombie": "Infernal Zombie",
   "entity.zombified.crystal_zombie": "Crystal Zombie",
   "entity.zombified.miner_zombie": "Miner Zombie",
   "entity.zombified.beserker_zombie": "Beserker Zombie",
   "entity.zombified.sludge_zombie": "Sludge Zombie",
+  "entity.zombified.brute_zombie": "Brute Zombie",
+  "entity.zombified.squirm_zombie": "Squirm Zombie",
 
   "item.zombified.arctic_spawn_egg": "Arctic Zombie Spawn Egg",
   "item.zombified.infernal_spawn_egg": "Infernal Zombie Spawn Egg",
@@ -12,10 +25,12 @@
   "item.zombified.miner_spawn_egg": "Miner Zombie Spawn Egg",
   "item.zombified.beserker_spawn_egg": "Beserker Zombie Spawn Egg",
   "item.zombified.sludge_spawn_egg": "Sludge Zombie Spawn Egg",
+  "item.zombified.brute_spawn_egg": "Brute Zombie Spawn Egg",
+  "item.zombified.squirm_spawn_egg": "Squirm Zombie Spawn Egg",
 
   "item.zombified.frozen_flesh": "Frozen Rotten Flesh",
   "item.zombified.charred_flesh": "Charred Flesh",
-  "item.zombified.flesh_hammer": "Flesh Hammer",
+  "item.zombified.flesh_hammer": "Rotten Flesh Hammer",
   "item.zombified.energon_crystal": "Energon Crystal",
   "item.zombified.energy_charge": "Energy Charge",
   "item.zombified.mud_clump": "Mud Clump",

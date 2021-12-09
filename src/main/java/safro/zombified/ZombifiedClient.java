@@ -5,14 +5,13 @@ import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.network.ClientSidePacketRegistry;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.entity.FlyingItemEntityRenderer;
-import net.minecraft.client.render.entity.IronGolemEntityRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.registry.Registry;
-import safro.zombified.entity.MinerZombieEntity;
 import safro.zombified.entity.render.*;
+import safro.zombified.util.EntitySpawnPacket;
 
 import java.util.UUID;
 
@@ -23,21 +22,21 @@ public class ZombifiedClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
-
         EntityRendererRegistry.INSTANCE.register(Zombified.ARCTIC, ArcticZombieRenderer::new);
         EntityRendererRegistry.INSTANCE.register(Zombified.INFERNAL, InfernalZombieRenderer::new);
         EntityRendererRegistry.INSTANCE.register(Zombified.CRYSTAL, CrystalZombieRenderer::new);
         EntityRendererRegistry.INSTANCE.register(Zombified.MINER, MinerZombieRenderer::new);
         EntityRendererRegistry.INSTANCE.register(Zombified.SLUDGE, SludgeZombieRenderer::new);
         EntityRendererRegistry.INSTANCE.register(Zombified.BESERKER, BeserkerZombieRenderer::new);
-        // EntityRendererRegistry.INSTANCE.register(Zombified.BRUTE, BruteZombieRenderer::new);
+        EntityRendererRegistry.INSTANCE.register(Zombified.BRUTE, BruteZombieRenderer::new);
+        EntityRendererRegistry.INSTANCE.register(Zombified.SQUIRM, SquirmZombieRenderer::new);
 
         EntityRendererRegistry.INSTANCE.register(Zombified.ENERGY_CHARGE_PROJECTILE_ENTITY_TYPE, (context) ->
                 new FlyingItemEntityRenderer(context));
         receiveEntityPacket();
     }
 
-        public void receiveEntityPacket() {
+    public void receiveEntityPacket() {
             ClientSidePacketRegistry.INSTANCE.register(PacketID, (ctx, byteBuf) -> {
                 EntityType<?> et = Registry.ENTITY_TYPE.get(byteBuf.readVarInt());
                 UUID uuid = byteBuf.readUuid();
@@ -60,5 +59,5 @@ public class ZombifiedClient implements ClientModInitializer {
                     MinecraftClient.getInstance().world.addEntity(entityId, e);
                 });
             });
-        }
     }
+}

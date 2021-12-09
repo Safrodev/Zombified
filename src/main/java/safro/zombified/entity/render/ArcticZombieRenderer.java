@@ -2,19 +2,11 @@ package safro.zombified.entity.render;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.client.model.ModelPart;
-import net.minecraft.client.model.ModelPartData;
-import net.minecraft.client.render.entity.*;
-import net.minecraft.client.render.entity.feature.ArmorFeatureRenderer;
-import net.minecraft.client.render.entity.model.AbstractZombieModel;
-import net.minecraft.client.render.entity.model.EntityModelLayer;
-import net.minecraft.client.render.entity.model.EntityModelLayers;
-import net.minecraft.client.render.entity.model.ZombieEntityModel;
+import net.minecraft.client.render.entity.EntityRendererFactory;
+import net.minecraft.client.render.entity.ZombieEntityRenderer;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.mob.ZombieEntity;
 import net.minecraft.util.Identifier;
-import safro.zombified.Zombified;
-import safro.zombified.entity.ArcticZombieEntity;
 
 @Environment(EnvType.CLIENT)
 public class ArcticZombieRenderer extends ZombieEntityRenderer {

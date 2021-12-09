@@ -23,7 +23,7 @@ public class EnergyCharge extends Item {
         if (!world.isClient) {
             EnergyChargeProjectileEntity energyEntity = new EnergyChargeProjectileEntity(world, user);
             energyEntity.setItem(itemStack);
-            energyEntity.setProperties(user, user.getPitch(), user.getYaw(), 0.0F, 1.5F, 0F);
+            energyEntity.setVelocity(user, user.getPitch(), user.getYaw(), 0.0F, 1.5F, 0F);
             world.spawnEntity(energyEntity);
         }
 

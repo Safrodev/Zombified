@@ -1,19 +1,20 @@
 package safro.zombified.entity;
 
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.mob.ZombieEntity;
+import net.minecraft.entity.mob.ZombifiedPiglinEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.ServerWorldAccess;
-import net.minecraft.world.World;
+import net.minecraft.world.*;
 
 import java.util.Random;
 
@@ -58,6 +59,13 @@ public class InfernalZombieEntity extends ZombieEntity {
         return bl;
     }
 
+    public static boolean canSpawn(EntityType<InfernalZombieEntity> type, WorldAccess world, SpawnReason spawnReason, BlockPos pos, Random random) {
+        return world.getDifficulty() != Difficulty.PEACEFUL && !world.getBlockState(pos.down()).isOf(Blocks.NETHER_WART_BLOCK);
+    }
+
+    public boolean canSpawn(WorldView world) {
+        return world.intersectsEntities(this) && !world.containsFluid(this.getBoundingBox());
+    }
 
     protected boolean canConvertInWater() {
         return true;

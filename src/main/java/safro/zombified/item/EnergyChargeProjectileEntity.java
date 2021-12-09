@@ -6,7 +6,6 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.mob.BlazeEntity;
 import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -22,7 +21,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.explosion.Explosion;
 import safro.zombified.Zombified;
 import safro.zombified.ZombifiedClient;
-import safro.zombified.entity.render.EntitySpawnPacket;
+import safro.zombified.util.EntitySpawnPacket;
 
 @SuppressWarnings("EntityConstructor")
 public class EnergyChargeProjectileEntity extends ThrownItemEntity {

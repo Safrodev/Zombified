@@ -6,22 +6,20 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import org.lwjgl.system.CallbackI;
 import safro.zombified.Zombified;
 
 public class ItemRegistry {
 
-    public static final Item FROZEN_FLESH = new Item(new FabricItemSettings().group(ItemGroup.FOOD).food(new FoodComponent.Builder().hunger(4).statusEffect(new StatusEffectInstance(StatusEffects.HUNGER, 600), 0.8F).build()));
-    public static final Item CHARRED_FLESH = new Item(new FabricItemSettings().group(ItemGroup.FOOD).food(new FoodComponent.Builder().hunger(4).saturationModifier(0.4F).build()));
-    public static final Item ENERGON_CRYSTAL = new Item(new FabricItemSettings().group(ItemGroup.MISC));
+    public static final Item FROZEN_FLESH = new Item(new FabricItemSettings().group(Zombified.ITEMGROUP).food(new FoodComponent.Builder().hunger(4).statusEffect(new StatusEffectInstance(StatusEffects.HUNGER, 600), 0.8F).build()));
+    public static final Item CHARRED_FLESH = new Item(new FabricItemSettings().group(Zombified.ITEMGROUP).food(new FoodComponent.Builder().hunger(4).saturationModifier(0.4F).build()));
+    public static final Item ENERGON_CRYSTAL = new Item(new FabricItemSettings().group(Zombified.ITEMGROUP));
     public static final Item FLESH_HAMMER = new FleshHammer(ToolMaterials.WOOD, 3, -2.4F, new Item.Settings().group(ItemGroup.COMBAT).maxCount(1));
-    public static final Item MUD_CLUMP = new Item(new FabricItemSettings().group(ItemGroup.MISC));
-    public static final Item SULFUR_DUST = new Item(new FabricItemSettings().group(ItemGroup.MISC));
-    public static final Item ENERGY_CHARGE = new EnergyCharge(new FabricItemSettings().group(ItemGroup.MISC).maxCount(16));
+    public static final Item MUD_CLUMP = new Item(new FabricItemSettings().group(Zombified.ITEMGROUP));
+    public static final Item SULFUR_DUST = new Item(new FabricItemSettings().group(Zombified.ITEMGROUP));
+    public static final Item ENERGY_CHARGE = new EnergyCharge(new FabricItemSettings().group(Zombified.ITEMGROUP).maxCount(16));
 
 
     public static void init() {
-
         Registry.register(Registry.ITEM, new Identifier("zombified", "frozen_flesh"), FROZEN_FLESH);
         Registry.register(Registry.ITEM, new Identifier("zombified", "charred_flesh"), CHARRED_FLESH);
         Registry.register(Registry.ITEM, new Identifier("zombified", "energon_crystal"), ENERGON_CRYSTAL);
@@ -32,27 +30,35 @@ public class ItemRegistry {
 
         Registry.register(Registry.ITEM, new Identifier("zombified", "arctic_spawn_egg"),
                 new SpawnEggItem(Zombified.ARCTIC, 1208321, 1426874,
-                        new Item.Settings().group(ItemGroup.MISC)));
+                        new Item.Settings().group(Zombified.ITEMGROUP)));
 
         Registry.register(Registry.ITEM, new Identifier("zombified", "infernal_spawn_egg"),
                 new SpawnEggItem(Zombified.INFERNAL, 1208321, 7212815,
-                        new Item.Settings().group(ItemGroup.MISC)));
+                        new Item.Settings().group(Zombified.ITEMGROUP)));
 
         Registry.register(Registry.ITEM, new Identifier("zombified", "crystal_spawn_egg"),
                 new SpawnEggItem(Zombified.CRYSTAL, 1208321, 7349630,
-                        new Item.Settings().group(ItemGroup.MISC)));
+                        new Item.Settings().group(Zombified.ITEMGROUP)));
 
         Registry.register(Registry.ITEM, new Identifier("zombified", "miner_spawn_egg"),
                 new SpawnEggItem(Zombified.MINER, 1208321, 4802889,
-                        new Item.Settings().group(ItemGroup.MISC)));
+                        new Item.Settings().group(Zombified.ITEMGROUP)));
 
         Registry.register(Registry.ITEM, new Identifier("zombified", "sludge_spawn_egg"),
                 new SpawnEggItem(Zombified.SLUDGE, 1208321, 4573744,
-                        new Item.Settings().group(ItemGroup.MISC)));
+                        new Item.Settings().group(Zombified.ITEMGROUP)));
 
         Registry.register(Registry.ITEM, new Identifier("zombified", "beserker_spawn_egg"),
                 new SpawnEggItem(Zombified.BESERKER, 1208321, 13015069,
-                        new Item.Settings().group(ItemGroup.MISC)));
+                        new Item.Settings().group(Zombified.ITEMGROUP)));
+
+        Registry.register(Registry.ITEM, new Identifier("zombified", "squirm_spawn_egg"),
+                new SpawnEggItem(Zombified.SQUIRM, 1208321, 0x95C870,
+                        new Item.Settings().group(Zombified.ITEMGROUP)));
+
+        Registry.register(Registry.ITEM, new Identifier("zombified", "brute_spawn_egg"),
+                new SpawnEggItem(Zombified.BRUTE, 1208321, 0x7089C8,
+                        new Item.Settings().group(Zombified.ITEMGROUP)));
 
     }
 }
